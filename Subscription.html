@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sithafal - Plans & Pricing</title>
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        .main-nav {
+            display: flex;
+            list-style: none;
+        }
+
+        .main-nav li {
+            margin-left: 30px;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .main-nav a:hover {
+            color: #4a90e2;
+        }
+
+        /* Main Content */
+        .container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px 20px;
+            background-image: url('BGGG.png');
+        }
+
+        .pricing-toggle {
+            text-align: center;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .toggle-btn {
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 10px 20px;
+            cursor: pointer;
+            color: #999;
+        }
+
+        .toggle-btn.active {
+            color: #fff;
+            position: relative;
+        }
+
+        .toggle-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50%;
+            height: 3px;
+            background-color: #4a90e2;
+        }
+
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .pricing-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+            padding: 30px;
+            width: 400px;
+            text-align: center;
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .price-container {
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            margin-bottom: 20px;
+        }
+
+        .currency {
+            font-size: 24px;
+            font-weight: 700;
+            color: #4a90e2;
+        }
+
+        .price-amount {
+            font-size: 36px;
+            font-weight: 700;
+            color: #4a90e2;
+        }
+
+        .price-period {
+            font-size: 16px;
+            color: #999;
+            align-self: flex-start;
+        }
+
+        .recommended {
+            background-color: #f8f9fa;
+            color: #666;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .features {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+            flex-grow: 1;
+        }
+
+        .features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: flex-start;
+            line-height: 1.5;
+        }
+
+        .features li::before {
+            content: "✓";
+            color: #4a90e2;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #4a90e2;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #3a7bc8;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #f8f9fa;
+            padding: 30px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-links {
+            display: flex;
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .footer-links li {
+            margin-right: 20px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .explore-link {
+            margin-left: auto;
+        }
+
+        .contact-info {
+            text-align: right;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .contact-btn {
+            background-color: #4a90e2;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .copyright {
+            color: #999;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="image copy 5.png" alt="Sithafal Logo" class="logo">
+        <nav>
+            <ul class="main-nav">
+                <li><a href="#">Privacy policy</a></li>
+                <li><a href="#">Subscribe</a></li>
+                <li><a href="#">Breached</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="pricing-toggle">
+            <button class="toggle-btn active">Annually</button>
+            <button class="toggle-btn">Monthly</button>
+        </div>
+
+        <div class="pricing-cards">
+            <!-- Basic Plan -->
+            <div class="pricing-card">
+                <h2 class="card-title">Basic</h2>
+                <div class="price-container">
+                    <span class="currency">$</span>
+                    <span class="price-amount">8.33</span>
+                    <span class="price-period">/month</span>
+                </div>
+               
+                <ul class="features">
+                    <li>Identity & Social Security Number Alerts</li>
+                    <li>Credit Monitoring Coverage</li>
+                    <li>Security and VPN for 5 PCs, Mac, and mobile devices</li>
+                    <li>Download upto 50 search results</li>
+                </ul>
+                <button class="btn">Get Started</button>
+            </div>
+
+            <!-- Premium Plan -->
+            <div class="pricing-card">
+                <h2 class="card-title">Premium</h2>
+                <div class="price-container">
+                    <span class="currency">$</span>
+                    <span class="price-amount">16.33</span>
+                    <span class="price-period">/month</span>
+                </div>
+                <span class="recommended">Recommended for starter</span>
+                <ul class="features">
+                    <li>Identity & Social Security Number Alerts</li>
+                    <li>Credit Monitoring Coverage</li>
+                    <li>Security and VPN for 5 PCs, Mac, and mobile devices</li>
+                    <li>Download upto 100 search results</li>
+                    <li>Alerts on crimes committed in your name</li>
+                </ul>
+                <button class="btn">Get Started</button>
+            </div>
+
+            <!-- Advanced Plan -->
+            <div class="pricing-card">
+                <h2 class="card-title">Advanced</h2>
+                <div class="price-container">
+                    <span class="currency">$</span>
+                    <span class="price-amount">83.33</span>
+                    <span class="price-period">/month</span>
+                </div>
+               
+                <ul class="features">
+                    <li>Identity & Social Security Number Alerts</li>
+                    <li>Credit Monitoring Coverage</li>
+                    <li>Security and VPN for 5 PCs, Mac, and mobile devices</li>
+                    <li>Download unlimited search results</li>
+                    <li>Alerts on crimes committed in your name</li>
+                    <li>24/7 monitoring on your data</li>
+                </ul>
+                <button class="btn">Get Started</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Sithafal</h3>
+                <ul>
+                    <li><a href="#">Solutions</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Explore Sithafal</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> sales@sithafal.com</p>
+                    <p><i class="fas fa-phone"></i> +919059777919</p>
+                </div>
+                <a href="#" class="contact-btn">Contact Us</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Sithafal 2025</p>
+        </div>
+    </footer>
+    
+
+    <script>
+        // JavaScript for toggle functionality between Annual and Monthly pricing
+        const toggleBtns = document.querySelectorAll('.toggle-btn');
+        
+        toggleBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                toggleBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Here you would typically update the pricing values
+                // This is just placeholder functionality
+                if (btn.textContent === 'Monthly') {
+                    // Update to monthly prices (would be populated with actual values)
+                    console.log('Switched to monthly pricing');
+                } else {
+                    // Update to annual prices (would be populated with actual values)
+                    console.log('Switched to annual pricing');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

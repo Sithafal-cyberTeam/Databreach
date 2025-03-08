@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sithafal - Data Breach Checker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stats Counter</title>
+    <style>
+        .stats {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 18px;
+        }
+
+        .stat-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .stat-item h3 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <!-- Replace with your logo -->
+            <img src="image copy 5.png" alt="Sithafal Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="/Users/leelasrinivas/Desktop/DBIS/subscription-page.html">Subscribe</a></li>
+                <li><a href="#">Breaches</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div class="hero-content">
+                <div class="search-container">
+                    <h2>Check if someone's compromised an online account linked to your email</h2>
+
+                    <div class="search-form"
+                        style="display: flex; flex-direction: row; align-items: start; width: 100%; margin: 0 auto;">
+                        <div class="query-type" style="width: 100%; margin-bottom: 10px;">
+                            <label for="query">Query type</label>
+                            <div class="select-wrapper">
+                                <select id="query" style="width: 100%;">
+                                    <option value="mail">📧 Email</option>
+                                    <option value="name">👤 Name or Nickname</option>
+                                    <option value="phone">📱 Phone Number</option>
+                                    <option value="password">🔑 Password</option>
+                                    <option value="car">🚗 Car (Plate/VIN)</option>
+                                    <option value="telegram">✈ Telegram Account</option>
+                                    <option value="facebook">📘 Facebook Account</option>
+                                    <option value="vk">🌟 VKontakte Account</option>
+                                    <option value="instagram">📸 Instagram Account</option>
+                                    <option value="ip">📍 IP Address</option>
+                                    <option value="bulk">📃 Bulk Search</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="email-input" style="width: 100%; margin-bottom: 10px;">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="Enter the Query" style="width: 100%;">
+                            <p id="inputHint" class="example">Example: Johndoe@gmail.com</p>
+                        </div>
+
+                        <button id='searchButton' class="search-btn" style="width: 100%;">Search</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="stats">
+            <div class="stat-container">
+                <div class="stat-item">
+                    <h3>3000+</h3>
+                    <p>Breached Websites</p>
+                </div>
+                <div class="stat-item">
+                    <h3><span id="static-part">69,101,345,</span><span id="moving-part" class="red">452</span></h3>
+                    <p>Breached Accounts</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100,040,637+</h3>
+                    <p>Search Results</p>
+                </div>
+                <div class="stat-item">
+                    <h3>500+</h3>
+                    <p>Subscriptions</p>
+                </div>
+            </div>
+        </section>
+        <section class="breach-results">
+            <div class="breach-info" style="text-align: center; margin-top: 20px;">
+                <!-- <h1>Your data found in <span style="color: red;">6 Breaches</span></h1> -->
+                <h1></h1>
+                <p></p>
+            </div>
+
+            <div class="breachresults">
+
+                <div id="loadingIndicator" class="hidden flex flex-col items-center justify-center py-12">
+                    <div class="loading">
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <p class="mt-4 text-gray-600">Searching for breached data...</p>
+                </div>
+
+
+
+            </div>
+
+            <section class="security-tips">
+                <h2 class="Secure-data">Secure Your Data</h2>
+                <div class="tips-container">
+                    <div class="tip">
+                        <img src="password change.png" alt="Change Passwords" width="100%">
+                        <div class="tip-content">
+                            <h3>Change your passwords.</h3>
+                            <p>Use strong, unique ones and enable two-factor authentication for extra security.</p>
+                        </div>
+                    </div>
+                    <div class="tip">
+                        <img src="MFA2.png" alt="Enable MFA" width="100%">
+                        <div class="tip-content">
+                            <h3>Enable Multi-Factor Authentication (MFA).</h3>
+                            <p>Add an extra layer of protection to prevent unauthorized access.</p>
+                        </div>
+                    </div>
+                    <div class="tip">
+                        <img src="Breached.png" alt="Breach Alerts" width="100%">
+                        <div class="tip-content">
+                            <h3>Stay alert and get breach notifications</h3>
+                            <p>Watch for scams, avoid sharing sensitive data, and subscribe to alerts for future
+                                breaches.</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="tip-footer">Secure your data by following these steps and protect your data from breaches</p>
+            </section>
+
+            <style>
+                .security-tips {
+                    color: white;
+                    /* White text for contrast */
+                    padding: 20px;
+                    /* border-radius: 10px;  */
+                }
+            </style>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    let movingPart = document.getElementById("moving-part");
+                    let value = 452; // Starting last 3 digits
+
+                    function updateCounter() {
+                        value++;
+                        if (value > 999) value = 0; // Reset when reaching 999
+                        movingPart.textContent = String(value).padStart(3, '0'); // Ensure 3 digits
+                    }
+
+                    setInterval(updateCounter, 500); // Update every 100ms
+                    let previousResponses = [];
+                    let apiKey = localStorage.getItem('telegramBreachSearchApiKey') || '6141630044:e9FqKv8V'; // Default to the provided key
+                    const searchTypeSelect = document.getElementById('query');
+                    const searchButton = document.getElementById('searchButton');
+                    const searchQueryInput = document.getElementById('email');
+                    const resultsContent = document.getElementById('resultsContent');
+                    const rawResults = document.getElementById('rawResults');
+                    const noResults = document.getElementById('noResults');
+                    const inputHintElem = document.getElementById('inputHint');
+                    const loadingIndicator = document.getElementById('loadingIndicator');
+                    // Update input hint based on search type
+                    searchTypeSelect.addEventListener('change', function () {
+                        updateInputHint();
+                    });
+                    function updateInputHint() {
+                        const searchType = searchTypeSelect.value;
+                        let hint = '';
+                        searchQueryInput.value = '';
+                        switch (searchType) {
+                            case 'mail':
+                                hint = 'Enter an email address (e.g., example@gmail.com, example@, @gmail.com)';
+                                searchQueryInput.rows = 3;
+                                break;
+                            case 'name':
+                                hint = 'Enter a name or nickname (e.g., Petrov, Petrov Maxim, ShadowPlayer228)';
+                                searchQueryInput.rows = 3;
+                                break;
+                            case 'phone':
+                                hint = 'Enter a phone number (e.g., +79002206090, 79002206090, 89002206090)';
+                                searchQueryInput.rows = 3;
+                                break;
+                            case 'password':
+                                hint = 'Enter a password (e.g., 123qwe)';
+                                searchQueryInput.rows = 3;
+                                break;
+                            case 'car':
+                                hint = 'Enter a car plate number or VIN (e.g., O999МУ777, XTA21150053965897)';
+                                searchQueryInput.rows = 3;
+                                break;
+                            case 'telegram':
+                                hint = 'Enter a Telegram account name or ID (e.g., Petrov Ivan, 314159265)';
+                                searchQueryInput.rows = 3;
+                                break;
+                            case 'facebook':
+                                hint = 'Enter a Facebook account name or ID (e.g., Petrov Ivan, 314159265)';
+                                searchQueryInput.rows = 3;
+                                break;
+                            case 'vk':
+                                hint = 'Enter a VKontakte account name or ID (e.g., Petrov Ivan, 314159265)';
+                                searchQueryInput.rows = 3;
+                                break;
+                            case 'instagram':
+                                hint = 'Enter an Instagram account name or ID (e.g., Petrov Ivan, 314159265)';
+                                searchQueryInput.rows = 3;
+                                break;
+                            case 'ip':
+                                hint = 'Enter an IP address (e.g., 127.0.0.1)';
+                                searchQueryInput.rows = 3;
+                                break;
+                            case 'bulk':
+                                hint = 'Enter multiple queries, one per line. UTF-8 encoding required.';
+                                searchQueryInput.rows = 6;
+                                break;
+                        }
+                        inputHintElem.textContent = hint;
+                    }
+
+                    // Initialize input hint
+                    updateInputHint();
+                    // Search function
+                    searchButton.addEventListener('click', function () {
+                        const searchType = searchTypeSelect.value;
+                        const searchQuery = searchQueryInput.value.trim();
+
+                        if (!searchQuery) {
+                            alert('Please enter a search query');
+                            return;
+                        }
+
+                        // Show loading indicator
+                        loadingIndicator.classList.remove('hidden');
+                        // noResults.classList.add('hidden');
+                        // resultsContent.classList.add('hidden');
+                        searchBreachData(searchType, searchQuery, apiKey);
+                    });
+
+                    // Search breach data via Telegram bot API
+                    function searchBreachData(type, query, key) {
+                        // In a real implementation, you would call the Telegram bot API
+                        // This is a simulated response for demonstration purposes
+
+                        // Simulate API call delay
+                        setTimeout(async () => {
+                            // Hide loading indicator
+                            loadingIndicator.classList.add('hidden');
+
+                            // Generate simulated response based on search type and query
+                            const response = await generateSimulatedResponse(type, query);
+                            const list = response.List; // Extract the List object
+                            let breachCount = Object.keys(list).length; // Count breaches
+                            if (list.hasOwnProperty("No results found")) {
+                                breachCount = 0;
+                            }
+
+                            const breachInfoElement = document.querySelector('.breach-info h1');
+                            breachInfoElement.innerHTML = `Your data found in <span style="color: red;">${breachCount} Breaches</span>`;
+                            if (breachCount === 0) {
+                                document.querySelector('.breach-info p').innerText = '';
+                            } else {
+                                document.querySelector('.breach-info p').innerText = "We found your information in a leaked database circulating on the dark web.";
+                            }
+
+                            document.querySelector('.breach-info').classList.remove('hidden');
+                            // Display results
+                            displayResults(response);
+                        }, 2000);
+                    }
+
+
+                    function displayResults(results) {
+                        const breachResultsContainer = document.querySelector('.breachresults');
+                        breachResultsContainer.innerHTML = ''; // Clear previous results
+
+                        if (!results || typeof results !== 'object') {
+                            return;
+                        }
+
+                        // Loop through each section in results.List
+                        Object.keys(results.List).forEach((key) => {
+                            const section = results.List[key];
+                            const compromisedDataKeys = (Array.isArray(section.Data) && section.Data.length > 0)
+                                ? Object.keys(section.Data[0]).join(', ')
+                                : '--';
+
+                            // Create a breach card element
+                            const breachCard = document.createElement('div');
+                            breachCard.classList.add('breach-item');
+
+                            // Construct HTML for the breach card
+                            breachCard.innerHTML = `
+            <div class="breach-info">
+                <div class="breach-data">
+                    <h3>Compromised Data:</h3>
+                    <p>${compromisedDataKeys || '--'}</p>
+                </div>
+                <div class="breach-description">
+                    <h4>${key}</h4>
+                    <p><strong>Info Leak:</strong> ${section.InfoLeak}</p>
+                    <p><strong>Number of Results:</strong> ${section.NumOfResults}</p>
+                    <ul>
+                        ${section.Data ? section.Data.map((item, index) => `
+                            <li><strong>Entry ${index + 1}:</strong>
+                                <ul>${Object.entries(item).map(([field, value]) => `<li><strong>${field}:</strong> ${value}</li>`).join('')}
+                                </ul>
+                            </li>
+                        `).join('') : ''}
+                    </ul>
+                </div>
+            </div>
+            <div class="breach-meta">
+                <button class="unlock-btn">Unlock for Results</button>
+            </div>
+        `;
+
+                            // Append the breach card to the results container
+                            breachResultsContainer.appendChild(breachCard);
+                        });
+                        breachResultsContainer.scrollIntoView({ behavior: 'smooth' });
+                    }
+
+                    async function generateSimulatedResponse(type, query) {
+                        const url = 'http://127.0.0.1:5001/bot';
+
+                        const data = {
+                            "token": "972670989:NY6wiwTu",
+                            "query": query,
+                            "limit": 1000,
+                            "lang": "en"
+                        };
+
+                        try {
+                            const response = await fetch(url, {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json"
+                                },
+                                body: JSON.stringify(data)
+                            });
+
+                            if (!response.ok) {
+                                console.log(response)
+                                throw new Error(`Response status: ${response.status}`);
+                            }
+
+                            const json = await response.json();
+                            console.log(json.msg);
+                            return json.msg
+                        } catch (error) {
+                            console.error("Error:", error.message);
+                            return error.message
+                        }
+                        // Return appropriate simulated response or empty string if no match
+                        if (responses[type]) {
+                            return responses[type];
+                        } else {
+                            // Generate a simple response for other search types
+                            return `Search results for ${type} "${query}":\n\nNo breached data found in our databases.`;
+                        }
+                    }
+
+                });
+            </script>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Sithafal</h3>
+                <ul>
+                    <li><a href="#">Solutions</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Explore Sithafal</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> sales@sithafal.com</p>
+                    <p><i class="fas fa-phone"></i> +919059777919</p>
+                </div>
+                <a href="#" class="contact-btn">Contact Us</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Sithafal 2025</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sithafal - Data Breach Checker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .stats {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .stat-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        .stat-item h3 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <!-- Replace with your logo -->
+            <img src="image copy 5.png" alt="Sithafal Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="/Users/leelasrinivas/Desktop/DBIS/subscription-page.html">Subscribe</a></li>
+                <li><a href="#">Breaches</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section class="hero">
+            <div class="hero-content">
+                <div class="search-container">
+                    <h2>Check if someone's compromised an online account linked to your email</h2>
+                    
+                    <div class="search-form" style="display: flex; flex-direction: row; align-items: start; width: 100%; margin: 0 auto;">
+                        <div class="query-type" style="width: 100%; margin-bottom: 10px;">
+                            <label for="query">Query type</label>
+                            <div class="select-wrapper">
+                                <select id="query" style="width: 100%;">
+                                    <option>Select</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="email-input" style="width: 100%; margin-bottom: 10px;">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="Enter the Query" style="width: 100%;">
+                            <p class="example">Example: Johndoe@gmail.com</p>
+                        </div>
+                        
+                        <button class="search-btn" style="width: 100%;">Search</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="stats">
+            <div class="stat-container">
+                <div class="stat-item">
+                    <h3>3000+</h3>
+                    <p>Breached Websites</p>
+                </div>
+                <div class="stat-item">
+                    <h3><span id="static-part">100,323,</span><span id="moving-part" class="red">389</span></h3>
+                    <p>Breached Accounts</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100,040,637</h3>
+                    <p>Search Results</p>
+                </div>
+                <div class="stat-item">
+                    <h3>500+</h3>
+                    <p>Subscriptions</p>
+                </div>
+            </div>
+        </section>
+
+            <section class="security-tips">
+                <h2 class="Secure-data">Secure Your Data</h2>
+                <div class="tips-container">
+                    <div class="tip">
+                        <img src="password change.png" alt="Change Passwords" width="100%">
+                        <div class="tip-content">
+                            <h3>Change your passwords.</h3>
+                            <p>Use strong, unique ones and enable two-factor authentication for extra security.</p>
+                        </div>
+                    </div>
+                    <div class="tip">
+                        <img src="MFA2.png" alt="Enable MFA" width="100%">
+                        <div class="tip-content">
+                            <h3>Enable Multi-Factor Authentication (MFA).</h3>
+                            <p>Add an extra layer of protection to prevent unauthorized access.</p>
+                        </div>
+                    </div>
+                    <div class="tip">
+                        <img src="Breached.png" alt="Breach Alerts" width="100%">
+                        <div class="tip-content">
+                            <h3>Stay alert and get breach notifications</h3>
+                            <p>Watch for scams, avoid sharing sensitive data, and subscribe to alerts for future breaches.</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="tip-footer">Secure your data by following these steps and protect your data from breaches</p>
+            </section>
+            
+            <style>
+                .security-tips {
+                    color: white; /* White text for contrast */
+                    padding: 20px;
+                    /* border-radius: 10px;  */
+                }
+            </style>           
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let movingPart = document.getElementById("moving-part");
+        let value = 389; // Starting last 3 digits
+
+        function updateCounter() {
+            value++;
+            if (value > 999) value = 0; // Reset when reaching 999
+            movingPart.textContent = String(value).padStart(3, '0'); // Ensure 3 digits
+        }
+
+        setInterval(updateCounter, 500); // Update every 100ms
+    });
+</script>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Sithafal</h3>
+                <ul>
+                    <li><a href="#">Solutions</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Explore Sithafal</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> sales@sithafal.com</p>
+                    <p><i class="fas fa-phone"></i> +919059777919</p>
+                </div>
+                <a href="#" class="contact-btn">Contact Us</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Sithafal 2025</p>
+        </div>
+    </footer>
+</body>
+</html>
