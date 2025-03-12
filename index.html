@@ -10,6 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stats Counter</title>
+    <link href="https://cdn.prod.website-files.com/669a55be953bf5aa9e39fee0/669e152b15bd7c845bea53d5_favicon-32x32.png" rel="shortcut icon" type="image/x-icon"/>
     <style>
         .stats {
             font-family: Arial, sans-serif;
@@ -42,8 +43,8 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="/Users/leelasrinivas/Desktop/DBIS/subscription-page.html">Subscribe</a></li>
+                <li><a href="Terms&conditions.html">Privacy Policy</a></li>
+                <li><a href="Subscription.html">Subscribe</a></li>
                 <li><a href="#">Breaches</a></li>
             </ul>
         </nav>
@@ -72,7 +73,6 @@
                                     <option value="vk">🌟 VKontakte Account</option>
                                     <option value="instagram">📸 Instagram Account</option>
                                     <option value="ip">📍 IP Address</option>
-                                    <option value="bulk">📃 Bulk Search</option>
                                 </select>
                             </div>
                         </div>
@@ -393,30 +393,54 @@
         </section>
     </main>
 
-    <footer>
+    <footer class="footer">
         <div class="footer-content">
-            <div class="footer-section">
+            <div class="footer-column">
+                <img src="image copy 5.png" alt="Sithafal Logo" class="footer-logo">
+                <div class="footer-social">
+                    <a href="#">
+                        <img src="Linkedin.png" alt="LinkedIn">
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
                 <h3>About Sithafal</h3>
-                <ul>
+                <ul class="footer-links">
                     <li><a href="#">Solutions</a></li>
                     <li><a href="#">Products</a></li>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Explore Sithafal</h3>
+                <ul class="footer-links">
                     <li><a href="#">Careers</a></li>
                     <li><a href="#">FAQs</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
-                <h3>Explore Sithafal</h3>
-                <div class="contact-info">
-                    <p><i class="fas fa-envelope"></i> sales@sithafal.com</p>
-                    <p><i class="fas fa-phone"></i> +919059777919</p>
+            
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <div class="contact-item">
+                    <svg class="contact-icon" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="white"/>
+                    </svg>
+                    sales@sithafal.com
                 </div>
-                <a href="#" class="contact-btn">Contact Us</a>
+                <div class="contact-item">
+                    <svg class="contact-icon" viewBox="0 0 24 24">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="white"/>
+                    </svg>
+                    +919059777919
+                </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>Sithafal 2025</p>
+        
+        <div class="copyright">
+            © Sithafal 2025
         </div>
     </footer>
 </body>
