@@ -23,4 +23,4 @@ def get_bot_data():
         return jsonify({'msg': str(e)}), 500  # Convert error to string to avoid issues
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5001)  # 👈 Ensure it runs on 0.0.0.0 for public access
+    app.run(host='0.0.0.0', port=8080)  # 👈 Ensure it runs on 0.0.0.0 for public access
