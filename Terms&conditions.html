@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sithafal - Data Search Tool</title>
+    <link href="https://cdn.prod.website-files.com/669a55be953bf5aa9e39fee0/669e152b15bd7c845bea53d5_favicon-32x32.png" rel="shortcut icon" type="image/x-icon"/>
     <style>
         * {
             margin: 0;
@@ -25,10 +26,13 @@
         }
 
         /* Header Navigation */
-        header {
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
             background-color: #000;
-            padding: 10px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
         .header-nav {
@@ -60,7 +64,7 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             padding: 40px;
             margin: 40px auto;
-            max-width: 800px;
+            max-width: 1600px;
         }
 
         h1 {
@@ -124,7 +128,7 @@
 
         /* Footer */
         footer {
-            background-color: #333;
+            background-color: #000;
             color: white;
             padding: 40px 0;
         }
@@ -178,14 +182,14 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="container header-nav">
+    <header class="header">
+        <a href="index.html">
             <img src="image copy 5.png" alt="Sithafal Logo" class="logo">
-            <div class="nav-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Plans & Pricing</a>
-                <a href="#">Breaches</a>
-            </div>
+        </a>
+        <div class="nav-links">
+            <a href="#">Breaches</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#" class="highlight">Plans & Pricing</a>
         </div>
     </header>
 
