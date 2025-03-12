@@ -115,7 +115,6 @@ select, input {
 }
 
 .select-wrapper:after {
-    content: '▼';
     font-size: 12px;
     position: absolute;
     right: 15px;
@@ -312,44 +311,84 @@ select, input {
     background-color: #ff5252;
 }
 
-/* Footer Styles */
-footer {
+.footer {
     background-color: #000;
-    color: #fff;
-    padding: 50px 5% 20px;
+    color: white;
+    padding: 40px;
 }
 
 .footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;
 }
 
-.footer-section {
-    flex: 1;
-    min-width: 250px;
-    margin-bottom: 30px;
-}
-
-.footer-section h3 {
-    font-size: 18px;
+.footer-logo {
+    height: 35px;
     margin-bottom: 20px;
-    color: #fff;
 }
 
-.footer-section ul li {
-    margin-bottom: 10px;
+.footer-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
 }
 
-.footer-section ul li a {
-    color: #bdc3c7;
+.footer-social img {
+    height: 24px;
+}
+
+.footer-column h3 {
+    color: #4CAF50;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
     transition: color 0.3s;
 }
 
-.footer-section ul li a:hover {
-    color: #fff;
+.footer-links a:hover {
+    color: #4CAF50;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+    }
+    
+    .container {
+        margin: 30px 20px;
+        padding: 30px 20px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        gap: 15px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
 }
 
 .contact-info p {
@@ -417,6 +456,19 @@ footer {
         margin-top: 15px;
     }
 }
+
+.contact-icon {
+    width: 18px;  /* Adjust size as needed */
+    height: 18px;
+}
+
+.contact-item{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
 .hero{
     background-image: url('BGGG.png');
     background-repeat: no-repeat;
@@ -453,4 +505,12 @@ footer {
         height: 72px;
         opacity: 0;
     }
+}
+
+.copyright{
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    font-size: 14px;
+    color: #888;
 }
